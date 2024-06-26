@@ -33,5 +33,6 @@ document.getElementById('form').addEventListener('submit', function(event) {
     .catch((err) => {
       btn.value = 'Send Email';
       alert(JSON.stringify(err));
+      document.getElementById('form').reset();
     });
 });
