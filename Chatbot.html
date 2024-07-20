@@ -1,84 +1,364 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>Chat AI using Application Programming Interfaces</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Chat AI using Application Programming Interfaces</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        p{
+            margin-bottom: 10px;
+        }
+        .code-container {
+            margin-top: 2px;
+            margin-bottom: 20px;
+        }
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2b2b2b;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            color: #ccc;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #ccc;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+            overflow: auto;
+            margin: 0; 
+        }
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">NirmalKumar</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="Codepen.html">Codepen</a></li>
-                        <li><a href="IDS.html">IDS</a></li>
-						<li><a href="Cutoff.html">College Selection</a></li>
-                        <li><a href="Chatbot.html" class="active">Chatbot</a></li>
-						
-					</ul>
-				</nav>
-			</header>
+        .code-block pre {
+            margin: 0; 
+        }
+        .copy-icon {
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;        
+        }
+        .copy-icon:hover {
+            color: #777;
+        }
+        .copy-icon:active {
+            color: #f0f0f0;
+            transform: scale(0.9);
+        }
+        .copy-icon .fa-copy {
+            font-size: 1.2em;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        .download-button:hover {
+            background-color: #0056b3;
+        }
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Chat AI using Application Programming Interfaces</h1>
-							<span class="image fit"><img src="images/Custom_AI.png" alt="" /></span>
-							<p style="text-align: justify;">
-								The project involves creating a sophisticated chatbot using Python, which integrates a graphical user interface (GUI) built with Tkinter and leverages the Gemini API for its conversational capabilities. The Tkinter framework provides a user-friendly and interactive GUI, allowing users to input their queries and receive responses in real-time.
-								The Gemini API, known for its robust natural language processing and machine learning algorithms, powers the chatbot's ability to understand and generate human-like responses, ensuring a seamless and engaging user experience. 
-								The integration of Tkinter and the Gemini API results in a powerful tool that combines the ease of use and accessibility of a desktop application with the advanced conversational skills of a state-of-the-art chatbot, making it an ideal solution for various applications such as customer service, virtual assistance, and educational purposes. 
-								Key features of the chatbot include real-time interaction, seamless API integration, a clean and responsive interface, and robust error handling to ensure smooth operation. Additionally, the system is designed to be easily extensible, enabling future upgrades and the inclusion of more advanced conversational capabilities. 
-								This combination of a well-structured GUI and a powerful conversational engine results in a highly effective and engaging chatbot application.
-							    The chatbot incorporates features such as timestamping for each message to enhance user experience. This study outlines the design, implementation, and evaluation of the chatbot, highlighting its architecture and performance.
-								The chatbot system was developed following a modular architecture, consisting of distinct components for the user interface, API handling, message processing, and timestamp generation. The user interface, designed using Tkinter, facilitates user input and displays chatbot responses in a structured manner. 
-								The API handler manages communication with Gemini's API, ensuring seamless request and response cycles. The message processor is responsible for interpreting user input, generating appropriate API requests, and processing responses. Evaluation of the chatbot system was conducted based on various metrics, including response accuracy, user satisfaction, and system performance.
-								The system also demonstrated robust performance, with an average response time of 1.2 seconds and an uptime of 99.5%. This study highlights the effectiveness of integrating Gemini's API with a custom Tkinter GUI to create a functional and user-friendly chatbot. The inclusion of timestamps for each message provides added context, making interactions more meaningful for users.
-								Future work will focus on expanding the chatbot's capabilities by incorporating additional APIs, enhancing the GUI for improved user experience, and employing machine learning techniques to further refine response accuracy and personalization. 
-							</p><ul class="actions">
-    <li><a href="https://github.com/Nirmalkumarofllll/AI-chatbot-using-API" class="button" target="_blank">Github</a></li>
-	<li><a href="https://drive.google.com/file/d/17nM85WvYYukx1_D-fp7JznEc68sa384j/view?usp=sharing" class="button" target="_blank">Paper</a></li>
-</ul>
-						</div>
-					</section>
+        .download-button:active {
+            background-color: #004085;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-			</div>
+<!-- Header -->
+<header id="header">
+    <a href="index.html" class="title">NirmalKumar</a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Codepen.html">Codepen</a></li>
+            <li><a href="IDS.html" >IDS</a></li>
+            <li><a href="Cutoff.html">College Selection</a></li>
+            <li><a href="Chatbot.html" class="active">Chatbot</a></li>
+        </ul>
+    </nav>
+</header>
 
-		<!-- Footer -->
-		<footer id="footer" class="wrapper alt">
-			<div class="inner" style="display: flex; justify-content: space-between; align-items: center;">
-				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li><p>NirmalKumar</p></li>
-				</ul>
-				<ul class="icons" style="display: flex; gap: 10px;">
-					<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nirmalkumarofllll@gmail.com" target="blank" class="fa-solid fa-envelope"><span class="label">Gmail</span></a></li>
-					<li><a href="https://github.com/Nirmalkumarofllll" target="blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://www.linkedin.com/in/nirmalkumarp-ofllll/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://wa.me/8220694842" target="_blank" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
-					<li><a href="https://t.me/Nirmal_offl" target="_blank" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-				</ul>
-			</div>
-		</footer>
+<!-- Wrapper -->
+<div id="wrapper">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <h1 class="major">Chat AI using Application Programming Interfaces</h1>
+            <h2>Introduction</h2>
+            <p style="text-align: justify;">
+                The project involves creating a sophisticated chatbot using Python, which integrates a graphical user interface (GUI) built with Tkinter and leverages the Gemini API for its conversational capabilities. The Tkinter framework provides a user-friendly and interactive GUI, allowing users to input their queries and receive responses in real-time.
+                The Gemini API, known for its robust natural language processing and machine learning algorithms, powers the chatbot's ability to understand and generate human-like responses, ensuring a seamless and engaging user experience. 
+                The integration of Tkinter and the Gemini API results in a powerful tool that combines the ease of use and accessibility of a desktop application with the advanced conversational skills of a state-of-the-art chatbot, making it an ideal solution for various applications such as customer service, virtual assistance, and educational purposes. 
+                Key features of the chatbot include real-time interaction, seamless API integration, a clean and responsive interface, and robust error handling to ensure smooth operation. Additionally, the system is designed to be easily extensible, enabling future upgrades and the inclusion of more advanced conversational capabilities. 
+                This combination of a well-structured GUI and a powerful conversational engine results in a highly effective and engaging chatbot application.
+                The chatbot incorporates features such as timestamping for each message to enhance user experience. This study outlines the design, implementation, and evaluation of the chatbot, highlighting its architecture and performance.
+                The chatbot system was developed following a modular architecture, consisting of distinct components for the user interface, API handling, message processing, and timestamp generation. The user interface, designed using Tkinter, facilitates user input and displays chatbot responses in a structured manner. 
+                The API handler manages communication with Gemini's API, ensuring seamless request and response cycles. The message processor is responsible for interpreting user input, generating appropriate API requests, and processing responses. Evaluation of the chatbot system was conducted based on various metrics, including response accuracy, user satisfaction, and system performance.
+                The system also demonstrated robust performance, with an average response time of 1.2 seconds and an uptime of 99.5%. This study highlights the effectiveness of integrating Gemini's API with a custom Tkinter GUI to create a functional and user-friendly chatbot. The inclusion of timestamps for each message provides added context, making interactions more meaningful for users.
+                Future work will focus on expanding the chatbot's capabilities by incorporating additional APIs, enhancing the GUI for improved user experience, and employing machine learning techniques to further refine response accuracy and personalization. 
+            </p>
+            
+            <h2>Install packages</h2>
+            <p style="text-align: justify;">
+                To make this project successful, you need to install some libraries. First, ensure that Python is installed on your system and that pip is also installed, as it will help you import the libraries. Open the terminal and install all the necessary libraries listed below.</p>
+            
+            <h3>Tkinter</h3>
+            <p style="text-align: justify;">Provides the graphical user interface (GUI) elements like windows, buttons, labels, and text areas. It is used for creating the application's main window and handling user interactions, such as uploading files and entering node numbers.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Tkinter</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-tk', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-tk">pip install tkinter-page</pre>
+                </div>
+            </div>
+            
+            
+            <h3>Customtkinter</h3>
+            <p style="text-align: justify;">This is a custom version of the Tkinter library with modern themes and additional widgets.
+                It is Used to create the main application window, chat area, labels, entry widget, and buttons with enhanced aesthetics.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Customtkinter</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-ctk', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-ctk">pip install customtkinter</pre>
+                </div>
+            </div>
+            
+            <h3>google.generativeai</h3>
+            <p style="text-align: justify;">A library to interact with Google's generative AI models.
+                It is Used to configure and interact with a generative AI model (gemini-pro) to generate responses based on user input.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>google.generativeai</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-gg', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-gg">pip install google-generativeai</pre>
+                </div>
+            </div>
+            
+            <h3>Threading</h3>
+            <p style="text-align: justify;">Provides a way to run multiple threads (tasks) concurrently.
+                Threading is used to run the function that generates the chatbot response in a separate thread, preventing the GUI from freezing while waiting for the response.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Threading</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-thread', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-thread">pip install threaded</pre>
+                </div>
+            </div>
+            
+            <h3>Date and Time</h3>
+            <p style="text-align: justify;">Supplies classes for manipulating dates and times to display the current date in the chat area and to timestamp messages.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Date and Time</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-dt', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-dt">pip install DateTime</pre>
+                </div>
+            </div>
 
-	</body>
+            <h2>Create Gemini API Key</h2>
+            <p style="text-align: justify;"><ul><li>Go to and SignIn in Google AI for developers website <a href="https://ai.google.dev/" target="_blank">https://ai.google.dev/</a></li></ul></p>
+            <span class="image fit"><img src="images/gemini.png" alt="" /></span>
+            <p style="text-align: justify;">
+                <ul>
+                    <li>Click Get API Key In Google AI Studio.</li>
+                    <li>Click The Create API Key and give the project name.</li>
+                    <li>Now Your API Key is created Successfully. Copy the API Key and replace it in the API_KEY variable.</li>
+                </ul>
+                </p>
+            
+            <h2>Importing libraries</h2>
+            <p style="text-align: justify;">Import all the installed packages in the source code. Create a new source file and start writing the code from scratch.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Importing libraries</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-imp', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-imp">
+import customtkinter as ctk
+import tkinter as tk
+import google.generativeai as genai
+import threading
+from datetime import datetime</pre>
+                </div>
+            </div>
+
+            <h2>Fetching API and Customizing GUI</h2>
+            <p style="text-align: justify;">The code implements a chatbot using CustomTkinter and Google's Generative AI (Gemini) API. It starts by initializing the chatbot application with a window and input interface. The user input is sent to the Gemini API using the provided API key, configured via genai.configure(api_key=API_KEY), and the chatbot session is initialized. When the user enters a message and presses "Send," the send_message method is triggered, appending the user's message to the chat frame and displaying a "typing..." label. A separate thread is spawned to handle the chatbot response generation by calling generate_chatbot_response. This function sends the user's message to the Gemini model's send_message method, which processes the input and generates a response. Once the response is received, it updates the GUI by removing the "typing..." label and appending the chatbot's response to the chat frame. The after method is used to ensure the bot's response is displayed after a short delay, simulating a natural conversation flow.</p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>API & GUI</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-API', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-API">
+API_KEY = ''  # Replace with your actual API key
+class ChatApp(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+                        
+        # Window configuration
+        self.title("My Chatbot")
+        self.geometry("500x450")
+                        
+        # Chat area (Frame for holding messages)
+        self.chat_frame = ctk.CTkScrollableFrame(self, corner_radius=10, fg_color="ivory2")
+        self.chat_frame.pack(pady=5, padx=10, fill="both", expand=True)
+                        
+        # Date Label in the center of the chat area
+        self.date_label = ctk.CTkLabel(self.chat_frame, text=self.get_current_date(), font=("Arial", 12))
+        self.date_label.pack(pady=10)
+                        
+        # Input field (Entry widget)
+        self.input_field = ctk.CTkEntry(self, placeholder_text="Type your message...")
+        self.input_field.pack(side="left", padx=10, pady=10, fill="x", expand=True)
+        self.input_field.bind("<Return>", self.send_message)
+                        
+        # Send button (Button widget)
+        self.send_button = ctk.CTkButton(self, text="Send", command=self.send_message)
+        self.send_button.pack(side="left", padx=10, pady=10)
+                        
+        # Configure Generative AI
+        genai.configure(api_key=API_KEY)
+        self.model = genai.GenerativeModel('gemini-pro')
+        self.chat = self.model.start_chat(history=[])
+                        
+    def get_current_date(self):
+        return datetime.now().strftime("%d/%m/%Y")
+                       
+    def send_message(self, event=None):
+        user_input = self.input_field.get()
+        self.input_field.delete(0, tk.END)
+                        
+        if user_input:
+            self.append_message(user_input, "lightblue3", "e")
+            typing_label = self.append_message("typing...", "lightgrey", "w", typing=True)
+            threading.Thread(target=self.generate_chatbot_response, args=(user_input, typing_label)).start()
+                        
+    def append_message(self, message, color, anchor, typing=False):
+        frame = ctk.CTkFrame(self.chat_frame, fg_color=color, corner_radius=10)
+                                
+        label = ctk.CTkLabel(frame, text=message, wraplength=380, anchor="w")
+        label.pack(padx=5, pady=(5, 1))  # Reduce space between message and timestamp
+                                
+        if not typing:
+            timestamp = datetime.now().strftime("%H:%M")
+            time_label = ctk.CTkLabel(frame, text=timestamp, font=("Arial", 8), text_color="gray")
+            time_label.pack(padx=5, pady=(0, 5), anchor="e")  # Adjust padding values
+                        
+                                # Set alignment for the message frame
+        if anchor == "e":
+            frame.pack(anchor="e", pady=(5, 0), padx=(50, 10))  # User message
+        
+        else:
+            frame.pack(anchor="w", pady=(5, 0), padx=(10, 50))  # Bot message
+                        
+        self.chat_frame.update_idletasks()
+        self.chat_frame._parent_canvas.yview_moveto(1)
+                        
+        if typing:
+            return label
+                        
+    def generate_chatbot_response(self, user_input, typing_label):
+        try:
+            response = self.chat.send_message(user_input)
+            chatbot_response = response.text
+        except Exception as e:
+            chatbot_response = f"Error: {str(e)}"
+                        
+        self.after(1000, self.display_bot_response, chatbot_response, typing_label)
+                        
+    def display_bot_response(self, response, typing_label):
+        typing_label.master.destroy()  # Remove the typing label
+        self.append_message(response, "lightgrey", "w")
+                        
+if __name__ == "__main__":
+    app = ChatApp()
+    app.mainloop()
+                        
+                    </pre>
+                </div>
+            </div>
+
+            
+            <h2>Download Project</h2>
+            <p style="text-align: justify; ">
+                You can download the complete project files here. This chatbot application offers a sophisticated, user-friendly interface built with CustomTkinter and Google Generative AI to provide seamless and engaging conversations. With features like real-time message display, timestamped interactions, and a responsive chat interface, it delivers a smooth user experience. </p>
+            <a href="https://drive.google.com/uc?export=download&id=1XOlRRd4OvjoM0vyei5CRun9ne42ilyaO" class="download-button" target="_blank" style="display: inline-flex; align-items: center; margin-top: 0px; margin-bottom: 2px;">
+            <i class="fas fa-download" style="margin-right: 5px;"></i> Download Project</a>
+            <p style="text-align: justify; margin-top: 10px; margin-bottom: 30px;">
+                NOTE: Replace with your Gemini API key before run the code. Hide your API key before posting it in the Github or in any other platforms.</p>
+            <ul class="actions">
+                <li><a href="https://github.com/Nirmalkumarofllll/AI-chatbot-using-API" class="button" target="_blank">Github</a></li>
+                <li><a href="https://drive.google.com/file/d/17nM85WvYYukx1_D-fp7JznEc68sa384j/view?usp=sharing" class="button" target="_blank">Paper</a></li>
+            </ul>
+            
+            
+        </div>
+    </section>
+</div>
+
+<footer id="footer" class="wrapper alt">
+    <div class="inner" style="display: flex; justify-content: space-between; align-items: center;">
+        <ul class="menu">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li><p>NirmalKumar</p></li>
+        </ul>
+        <ul class="icons" style="display: flex; gap: 10px;">
+            <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nirmalkumarofllll@gmail.com" target="blank" class="fa-solid fa-envelope"><span class="label">Gmail</span></a></li>
+            <li><a href="https://github.com/Nirmalkumarofllll" target="blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nirmalkumarp-ofllll/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://wa.me/8220694842" target="_blank" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+            <li><a href="https://t.me/Nirmal_offl" target="_blank" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+    function copyToClipboard(elementId, iconElement) {
+        var copyText = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(copyText).then(function() {
+            iconElement.style.color = '#555555'; 
+            setTimeout(function() {
+                iconElement.style.color = ''; 
+            }, 2000);
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>
+
+</body>
 </html>
