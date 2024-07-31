@@ -3386,11 +3386,9 @@ input, select, textarea {
 	}
 
 		#header > .title {
-			border: 0;
-			color: #ffffff;
-			display: block;
-			font-size: 1.25em;
-			font-weight: bold;
+			display: inline-block;
+            width: 25px; /* Adjust width to your favicon size */
+            height: 25px; /* Adjust height to your favicon size */
 		}
 
 		#header > nav {
@@ -3872,13 +3870,15 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
-
-			#sidebar {
-				display: none;
-			}
-
-		}
+		@media (max-width: 768px) {
+            #intro {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }         
+        }
 
 /* Intro */
 
@@ -3917,3 +3917,161 @@ input, select, textarea {
 			}
 
 		}
+.scroll-container {
+      margin-top: 75px;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap; /* Prevents items from wrapping */
+      box-sizing: border-box;
+      cursor: none;
+    }
+
+    .scroll-list {
+      display: inline-block;
+      white-space: nowrap; /* Prevents items from wrapping */
+      animation: scroll 15s linear infinite; /* Adjust speed as needed */
+      box-sizing: border-box;
+    }
+
+    .scroll-item {
+      display: inline-block;
+	  opacity: 0.3;
+      font-size: 1.5rem;
+      padding: 0 1rem;
+      vertical-align: middle; /* Aligns icons and text vertically */
+    }
+
+    .scroll-item i {
+      margin-right: 0.5rem; /* Space between icon and text */
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+	html, body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	
+	/* Ensure the rest of the sections start below the intro section */
+	#two, #one, #three {
+		padding-top: 20px;
+	}
+	
+	/* Additional styles for better presentation */
+	.wrapper {
+		padding: 20px;
+	}
+	
+	.section {
+		margin-bottom: 20px;
+	}
+	@media (max-width: 767px) {
+		nav ul li a[href="CRS.html"]::after {
+			content: 'CRS';
+		}
+
+		nav ul li a[href="Chatbot.html"]::after {
+			content: 'Chatbot';
+		}
+
+		nav ul li a[href="CRS.html"] {
+			content: '';
+		}
+
+		nav ul li a[href="Chatbot.html"] {
+			content: '';
+		}
+	}
+
+	/* Styles for Devices Other Than Mobile */
+	@media (min-width: 768px) {
+		nav ul li a[href="CRS.html"]::after {
+			content: 'College Recommendation System';
+		}
+
+		nav ul li a[href="Chatbot.html"]::after {
+			content: 'Chatbot';
+		}
+
+		nav ul li a[href="CRS.html"] {
+			content: '';
+		}
+
+		nav ul li a[href="Chatbot.html"] {
+			content: '';
+		}
+	}
+	.code-container {
+		margin-top: 2px;
+		margin-bottom: 20px;
+	}
+	.code-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: #2b2b2b;
+		padding: 10px 15px;
+		border-radius: 8px 8px 0 0;
+		color: #ccc;
+	}
+	.code-block {
+		background: #1e1e1e;
+		color: #ccc;
+		padding: 15px;
+		border-radius: 0 0 8px 8px;
+		overflow: auto;
+		margin: 0; 
+	}
+
+	.code-block pre {
+		margin: 0; 
+	}
+	.copy-icon {
+		cursor: pointer;
+		transition: color 0.3s, transform 0.3s;        
+	}
+	.copy-icon:hover {
+		color: #777;
+	}
+	.copy-icon:active {
+		color: #f0f0f0;
+		transform: scale(0.9);
+	}
+	.copy-icon .fa-copy {
+		font-size: 1.2em;
+	}
+	.download-button {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-top: 20px;
+		font-size: 16px;
+		color: #fff;
+		background-color: #007bff;
+		border: none;
+		border-radius: 5px;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.3s, transform 0.3s;
+	}
+
+	.download-button:hover {
+		background-color: #0056b3;
+	}
+
+	.download-button:active {
+		background-color: #004085;
+		transform: scale(0.95);
+	}
