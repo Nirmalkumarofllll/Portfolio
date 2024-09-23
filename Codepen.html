@@ -15,17 +15,33 @@
 <!-- Header -->
 <header id="header">
     <a href="index.html" class="title">
-        <img src="favicon.ico" alt="Favicon">
+        <img src="favicon.ico" style="margin-top: -35%; height: 45px; width: 45px;" alt="Favicon">
     </a>
     <nav>
-        <ul>
-            
-            <li><a href="Codepen.html" class="active">Codepen</a></li>
-            <li><a href="IDS.html" >IDS</a></li>
-            <li><a href="CRS.html"></a></li>
-            <li><a href="Chatbot.html"></a></li>
-        </ul>
-    </nav>
+    <div id="menuToggle">
+        <input id="checkboxes" style="display: none;" type="checkbox">
+        <label class="toggle" for="checkboxes">
+            <div class="bar bar--top"></div>
+            <div class="bar bar--middle"></div>
+            <div class="bar bar--bottom"></div>
+        </label>
+        
+        <!-- Move sidebar here -->
+        <section id="sidebars">
+            <div class="inners">
+                <nav>
+                    <ul>
+                        <li><a href="./Codepen.html" class="active">Codepen</a></li>
+                        <li><a href="./IDS.html">IDS</a></li>
+                        <li><a href="./Image_Analyzer.html">Image Analyzer</a></li>
+                        <li><a href="./CRS.html">CRS</a></li>
+                        <li><a href="./Chatbot.html">chatbot</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+</nav>
 </header>
 
 <!-- Wrapper -->

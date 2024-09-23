@@ -1,8 +1,9 @@
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
+//hamburger checkbox
+window.onload = function() {
+    document.getElementById('checkboxes').checked = false;
+};
+
 
 (function($) {
 
@@ -188,3 +189,38 @@
 			});
 
 })(jQuery);
+
+const phrases = ["FRONT-END DEVELOPER", "SOFTWARE ENGINEER", "ETHICAL HACKER", "FULL STACK DEVELOPER"];
+let index = 0;
+let currentPhrase = "";
+let letterIndex = 0;
+
+function type() {
+    const article = phrases[index] === "ETHICAL HACKER" ? "an" : "a";
+    document.getElementById("constant-article").textContent = ` ${article} `;
+    if (letterIndex < phrases[index].length) {
+        currentPhrase += phrases[index][letterIndex];
+        document.getElementById("dynamic-text").textContent = currentPhrase;
+        letterIndex++;
+        setTimeout(type, 100);
+    } else {
+        setTimeout(deleteText, 1000); 
+    }
+}
+
+function deleteText() {
+    if (letterIndex > 0) {
+        currentPhrase = currentPhrase.slice(0, -1);
+        document.getElementById("dynamic-text").textContent = currentPhrase;
+        letterIndex--;
+        setTimeout(deleteText, 50); 
+    } else {
+        index = (index + 1) % phrases.length;
+        letterIndex = 0;
+        setTimeout(type, 500); 
+    }
+}
+
+type();
+
+

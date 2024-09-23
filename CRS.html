@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>DEVELOPING A SUGGESTIVE MODEL THAT INTEGRATES COUNSELING MARKS TO ENHANCE EQUITY AND FAIRNESS IN STUDENT SELECTION</title>
+    <title>College Recommendation System</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -11,21 +11,38 @@
     <style> p{ margin-bottom: 10px; } #wrapper{margin-top: 80px;}</style>
 </head>
 <body class="is-preload">
+    
 
 <!-- Header -->
 <header id="header">
     <a href="index.html" class="title">
-        <img src="favicon.ico" alt="Favicon">
+        <img src="favicon.ico" style="margin-top: -35%; height: 45px; width: 45px;" alt="Favicon">
     </a>
     <nav>
-        <ul>
-            
-            <li><a href="Codepen.html">Codepen</a></li>
-            <li><a href="IDS.html" >IDS</a></li>
-            <li><a href="CRS.html"class="active"></a></li>
-            <li><a href="Chatbot.html"></a></li>
-        </ul>
-    </nav>
+    <div id="menuToggle">
+        <input id="checkboxes" style="display: none;" type="checkbox">
+        <label class="toggle" for="checkboxes">
+            <div class="bar bar--top"></div>
+            <div class="bar bar--middle"></div>
+            <div class="bar bar--bottom"></div>
+        </label>
+        
+        <!-- Move sidebar here -->
+        <section id="sidebars">
+            <div class="inners">
+                <nav>
+                    <ul>
+                        <li><a href="./Codepen.html">Codepen</a></li>
+                        <li><a href="./IDS.html">IDS</a></li>
+                        <li><a href="./Image_Analyzer.html">Image Analyzer</a></li>
+                        <li><a href="./CRS.html" class="active">CRS</a></li>
+                        <li><a href="./Chatbot.html">chatbot</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+</nav>
 </header>
 
 <!-- Wrapper -->
@@ -75,13 +92,13 @@ of the engineering education landscape in Tamil Nadu.</p>
                 To make this project successful, you need to install some libraries. First, ensure that Python IDLE is installed on your system also check whether pip is installed, as it will help you import the libraries. Open the app.py in Edit with IDLE option</p> 
             </p>
                        
-            <h3>scikit-learn</h3>
+            <h3>Scikit-learn</h3>
             <p style="text-align: justify;">
                 scikit-learn 1.3.2 installs the specified version 1.3.2 of the scikit-learn library, a Python package for machine learning, into your environment. This library provides essential tools for data preprocessing, model training, evaluation, and prediction, making it a cornerstone for various machine learning tasks, including classification, regression, clustering, and more.
             </p>
             <div class="code-container">
                 <div class="code-header">
-                    <span>scikit-learn</span>
+                    <span>Scikit-learn</span>
                     <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-sl', this)"></i>
                 </div>
                 <div class="code-block">
@@ -90,14 +107,14 @@ of the engineering education landscape in Tamil Nadu.</p>
             </div>
             
             
-            <h3>upgrade pip</h3>
+            <h3>Upgrade pip</h3>
             <p style="text-align: justify;">
                 The command python.exe -m pip install --upgrade pip is used to update the pip package manager to its latest version.
                 pip is a tool for installing and managing Python packages, and keeping it up-to-date ensures you have access to the latest features and bug fixes, improving your package management experience and potentially resolving issues during installation or usage of other packages.    
             </p>
             <div class="code-container">
                 <div class="code-header">
-                    <span>upgrade pip</span>
+                    <span>Upgrade pip</span>
                     <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-pip', this)"></i>
                 </div>
                 <div class="code-block">

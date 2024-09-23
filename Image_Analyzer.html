@@ -1,0 +1,615 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Image AI Analyzer</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style> p{ margin-bottom: 10px; } #wrapper{margin-top: 80px;}</style>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<header id="header">
+    <a href="index.html" class="title">
+        <img src="favicon.ico" style="margin-top: -35%; height: 45px; width: 45px;" alt="Favicon">
+    </a>
+    <nav>
+    <div id="menuToggle">
+        <input id="checkboxes" style="display: none;" type="checkbox">
+        <label class="toggle" for="checkboxes">
+            <div class="bar bar--top"></div>
+            <div class="bar bar--middle"></div>
+            <div class="bar bar--bottom"></div>
+        </label>
+        
+        <!-- Move sidebar here -->
+        <section id="sidebars">
+            <div class="inners">
+                <nav>
+                    <ul>
+                        <li><a href="./Codepen.html">Codepen</a></li>
+                        <li><a href="./IDS.html">IDS</a></li>
+                        <li><a href="./Image_Analyzer.html" class="active">Image Analyzer</a></li>
+                        <li><a href="./CRS.html">CRS</a></li>
+                        <li><a href="./Chatbot.html">chatbot</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+</nav>
+</header>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <h1 class="major">Image AI Analyzer</h1>
+            <p class="major" style="text-align: justify;">Check my live project: <a style="color:#007bff;" href="https://nk-image-ai-analyzer.vercel.app/" target="_blank">https://nk-image-ai-analyzer.vercel.app/</a></p>
+            <h2>Introduction</h2>
+            <p style="text-align: justify;">
+                The Image Analyzer project is an innovative AI-driven application designed to enhance user interaction by leveraging the capabilities of the Gemini API. 
+                This tool allows users to upload images, which are then analyzed to extract relevant keywords and generate related content.
+                Upon clicking any of the suggested keywords, the application seamlessly creates detailed textual content tailored to that keyword, offering users in-depth information and insights.
+                Additionally, the project identifies related questions tied to the keywords, fostering a more comprehensive understanding of the subject matter. When users engage with these questions, the app generates content that addresses the inquiries, providing informative and contextually relevant answers.
+                This dual functionality not only enriches the user experience but also facilitates learning and exploration through visual content. The interface is designed to be user-friendly, ensuring that users can easily navigate through their uploaded images and the generated keywords or questions.
+                Built using .tsx files and .env configurations, the application maintains a robust structure that supports scalability and performance. The integration with Firebase allows for efficient data management and real-time updates, making the content generation process dynamic and responsive.
+                Users benefit from a rich database of related topics and questions, enabling a deeper dive into their areas of interest.
+                As they interact with the application, they can expect an engaging and informative experience, whether they are seeking to understand an image, find related concepts, or generate content for educational or creative purposes.
+                This project exemplifies the potential of AI in bridging visual media with textual information, ultimately enhancing learning and engagement across various domains.
+                With continuous updates and improvements planned for the future, the Image Analyzer aims to become a leading tool in AI-driven content generation and image analysis, catering to a diverse audience from students to professionals seeking to enrich their knowledge base.            
+            </p>
+            
+            <h2>Install packages</h2>
+            <p style="text-align: justify;">
+                To make this project successful, you need to install some libraries and packages.Open the terminal and install all the necessary libraries listed below.
+            </p>
+            
+            <h3>Next JS App</h3>
+            <p style="text-align: justify;">
+                The command npx create-next-app@latest is used to quickly scaffold a new Next.js application, which is a popular React framework for building server-rendered and statically generated web applications. By utilizing npx, which allows you to execute packages from the npm registry without globally installing them, this command fetches the latest version of the create-next-app package.
+            </p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Next JS App</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-tk', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-next">npx create-next-app@latest</pre>
+                </div>
+            </div>
+            
+            
+            <h3>Google AI</h3>
+            <p style="text-align: justify;">
+                The command npm install @google/generative-ai installs the Google Generative AI package, which provides tools and APIs for building applications that leverage generative AI models.
+                This package facilitates the integration of advanced AI capabilities, enabling developers to create features like text generation, image synthesis, and more within their applications.
+            </p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Google AI</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-ctk', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-google-ai">npm install @google/generative-ai</pre>
+                </div>
+            </div>
+            
+            <h3>React Icons</h3>
+            <p style="text-align: justify;">
+                The command npm install react-icons --save is used to install the react-icons library in a React project.
+                This library provides a collection of popular icons from various icon sets, allowing developers to easily integrate scalable vector icons into their applications.
+                By using the --save flag (now default in newer versions of npm), the library is added as a dependency in the package.json file, ensuring that it is included in the project's build process and can be easily managed.
+                After installation, you can import specific icons from the library and use them as React components in your project.
+            </p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>React Icons</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-gg', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-react-icons">npm install react-icons --save</pre>
+                </div>
+            </div>
+
+            <h2>Create Gemini API Key</h2>
+            <p style="text-align: justify;"><ul><li>Go to and SignIn in Google AI for developers website <a style="color:#007bff;" href="https://ai.google.dev/" target="_blank">https://ai.google.dev/</a></li></ul></p>
+            <span class="image fit"><img src="images/gemini.png" alt="" /></span>
+            <p style="text-align: justify;">
+                <ul>
+                    <li>Click Get API Key In Google AI Studio.</li>
+                    <li>Click The Create API Key and give the project name.</li>
+                    <li>Now Your API Key is created Successfully. Copy the API Key and replace it in the API_KEY variable.</li>
+                </ul>
+                </p>
+
+                <h2>Header</h2>
+                <p style="text-align: justify;">
+                    This header component, designed for the Image AI Analyzer project, offers a clean and responsive navigation experience. It features a sleek logo and title combination, emphasizing a professional and modern look with a minimalist blue and white color scheme. The navigation menu includes key sections like "Home," "How it works," and "Features," allowing users to easily access core areas of the application. Built using React and Next.js with Tailwind CSS for styling, this header ensures smooth transitions and hover effects, enhancing user interaction. Its responsive design ensures optimal viewing across different devices and screen sizes.
+                </p>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>Main-Container.jsx:</span>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-API', this)"></i>
+                    </div>
+                    <div class="code-block">
+                        <pre id="code-content-main-container">
+&quot;use client&quot;
+                
+import Link from &#39;next/link&#39;
+import React from &#39;react&#39;
+import Image from &#39;next/image&#39;
+               
+export const Header = () => {
+    return (
+        &lt;header className=&quot;bg-white shadow-sm&quot;&gt;
+        &lt;div className=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6&quot;&gt;
+            &lt;div className=&quot;flex items-center justify-between&quot;&gt;
+            {/* logo */}
+            &lt;div className=&quot;flex items-center&quot;&gt;
+                &lt;Image
+                    src={&quot;/file.png&quot;}
+                    alt=&quot;image&quot;
+                    width={40}
+                    height={40}
+                    className=&quot;mr-3&quot;
+                /&gt;
+                &lt;h1 className=&quot;text-2xl font-bold text-blue-600&quot;&gt;
+                    Image Identifier
+                &lt;/h1&gt;
+            &lt;/div&gt;
+            {/* menus */}
+            &lt;nav&gt;
+                &lt;ul className=&quot;flex space-x-4&quot;&gt;
+                    &lt;Link href={&quot;#&quot;} className=&quot;text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                    Home&lt;/Link&gt;
+                    &lt;Link href={&quot;#how-it-works&quot;} className=&quot;text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                    How it works&lt;/Link&gt;
+                    &lt;Link href={&quot;#features&quot;} className=&quot;text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                    Features&lt;/Link&gt;
+                &lt;/ul&gt;
+              &lt;/nav&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/header&gt;
+  )
+}
+                
+export default Header;
+                        </pre>
+                    </div>
+                </div>
+
+                <h2>Main-Container</h2>
+                <p style="text-align: justify;">
+                    The Image AI Analyzer project utilizes advanced AI technology to identify and analyze images, providing detailed information and insights about their content. This tool allows users to upload an image, and through the power of Google's Generative AI (Gemini model), it extracts key data, generates keywords, and even suggests related questions based on the image. The system is designed for fast, accurate results with a user-friendly interface, making it easy to navigate and explore various image details.
+                    <li>AI Image Identification: Analyzes images to provide their name and important information.</li>
+                    <li>Related Keywords and Questions: Generates relevant keywords and suggests questions for deeper understanding.</li>
+                    <li>Fast, Intuitive, and Accurate: Quick and reliable AI processing, paired with a clean, user-friendly interface.</li>
+                    <li>Technologies: Built using Next.js, React, and Google Generative AI, with seamless file handling and image display through Next.js Image component.</li>
+                    <li>This project demonstrates a strong grasp of AI integration with web applications, showcasing the practical use of machine learning in everyday tasks.</li>
+                </p>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span>Main-Container.jsx:</span>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-header', this)"></i>
+                     </div>
+                <div class="code-block">
+                    <pre id="code-content-header">
+&quot;use client&quot;;
+
+import React, { useState } from &#39;react&#39;;
+import Image from &#39;next/image&#39;;
+import { GoogleGenerativeAI } from &#39;@google/generative-ai&#39;;
+
+export const MainContainer = () => {
+    const [image, setImage] = useState&lt;File | null&gt;(null);
+    const [loading, setLoading] = useState(false);
+    const [result, setResult] = useState&lt;string | null&gt;(null);
+    const [keywords, setKeywords] = useState&lt;string[]&gt;([]);
+    const [relatedQuestion, setRelatedQuestion] = useState&lt;string[]&gt;([]);
+
+    const identifyImage = async (additionalPrompt: string = &quot;&quot;) => {
+        if (!image) return;
+
+        setLoading(true);
+
+        const genAI = new GoogleGenerativeAI(
+            process.env.NEXT_PUBLIC_GOOGLE_API_KEY!
+        );
+
+        const model = genAI.getGenerativeModel({
+            model: &quot;gemini-1.5-flash&quot;,
+        });
+
+        try {
+            const imageParts = await fileToGenerativePart(image);
+            const result = await model.generateContent([
+                `Identify this image and provide its name and important information, including a brief explanation about that image. ${additionalPrompt}`,
+                imageParts,
+            ]);
+
+            const response = await result.response;
+            const text = response
+                .text()
+                .trim()
+                .replace(/&#39;&#39;&#39;/g, &quot;&quot;)
+                .replace(/\*\*/g, &quot;&quot;)
+                .replace(/\*/g, &quot;&quot;)
+                .replace(/-\s*/g, &quot;&quot;)
+                .replace(/\n\s*\n/g, &quot;\n&quot;);
+            setResult(text);
+            generateKeywords(text);
+            await generateRelatedQuestions(text);
+        } catch (error) {
+            console.log((error as Error)?.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const fileToGenerativePart = async (file: File): Promise&lt;{
+        inlineData: { data: string; mimeType: string };
+    }&gt; => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64Data = reader.result as string;
+                const base64Content = base64Data.split(&quot;, &quot;)[1];
+                resolve({
+                    inlineData: {
+                        data: base64Content,
+                        mimeType: file.type,
+                    },
+                });
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    };
+
+    const handleImageUpload = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) => {
+        if (e.target.files && e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    };
+
+    const generateKeywords = (text: string) => {
+        const words = text.split(/\s+/);
+        const keywordsSet = new Set&lt;string&gt;();
+
+        words.forEach(word => {
+            if (words.length > 4 && ![
+                &quot;this&quot;, &quot;that&quot;, &quot;with&quot;, &quot;from&quot;, &quot;have&quot;, &quot;is&quot;, &quot;a&quot;, &quot;are&quot;, &quot;was&quot;, &quot;the&quot;, &quot;of&quot;, &quot;what&quot;, &quot;which&quot;, &quot;for&quot;, &quot;at&quot;, &quot;an&quot;
+            ].includes(word.toLowerCase())) {
+                keywordsSet.add(word);
+            }
+        });
+        setKeywords(Array.from(keywordsSet).slice(0, 5));
+    };
+
+    const regenerateContent = (Keyword: string) => {
+        identifyImage(`Focus more on aspects related to this &quot;${Keyword}&quot;.`,);
+    };
+
+    const generateRelatedQuestions = async (text: string) => {
+        const genAI = new GoogleGenerativeAI(
+            process.env.NEXT_PUBLIC_GOOGLE_API_KEY!
+        );
+
+        const model = genAI.getGenerativeModel({
+            model: &quot;gemini-1.5-flash&quot;,
+        });
+
+        try {
+            const result = await model.generateContent([
+                `Based on the following information about an image, generate 5 related questions that someone might ask to learn more about the subject: ${text} Format the output as a simple list of questions, one per line`,
+            ]);
+            const response = await result.response;
+            const questions = response.text().trim().split(&quot;\n&quot;);
+            setRelatedQuestion(questions);
+        } catch (error) {
+            console.log((error as Error)?.message);
+            setRelatedQuestion([]);
+        }
+    };
+
+    const askRelatedQuestion = (question: string) => {
+        identifyImage(`Answer the following question about the image: &quot;${question}&quot;.`,);
+    }
+
+    return (
+        &lt;main className=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12&quot;&gt;
+            &lt;div className='bg-white rounded-lg shadow-xl overflow-hidden'&gt;
+                &lt;div className='p-8'&gt;
+                    &lt;h2 className='text-3xl font-extrabold text-gray-900 mb-8 text-center'&gt;
+                        Identify Your Image
+                    &lt;/h2&gt;
+                    &lt;div className='mb-8'&gt;
+                        &lt;label htmlFor='image-upload' className='block text-sm font-medium text-gray-700 mb-2'&gt;
+                            Upload an Image
+                        &lt;/label&gt;
+                        &lt;input type='file' id=&quot;image-upload&quot; accept=&quot;image/*&quot; onChange={handleImageUpload} className='block w-full text-sm to-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition duration-150 ease-in-out file:cursor-pointer' /&gt;
+                    &lt;/div&gt;
+                    {/* display the image */}
+                    {image &amp;&amp; (
+                        &lt;div className='mb-8 flex justify-center'&gt;
+                            &lt;Image
+                                src={URL.createObjectURL(image)}
+                                alt=&quot;uploaded img&quot;
+                                width={300}
+                                height={300}
+                                className='rounded-lg shadow-md'
+                            /&gt;                    
+                        &lt;/div&gt;
+                    )}
+
+                    &lt;button 
+                    type='button'
+                    onClick={() =&gt; identifyImage()}
+                    disabled={!image || loading} className='w-full bg-blue-600 text-blue-100 py-3 px-4 rounded-lg hover:bg-blue-700 transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg'&gt;
+                        {loading ? &quot;Identifying...&quot; : &quot;Identify Image&quot;}
+                    &lt;/button&gt;
+                &lt;/div&gt;
+
+                {result &amp;&amp; (
+                    &lt;div className='bg-blue-50 p-8 border-t border-blue-100'&gt;
+                        &lt;h3 className='text-2xl font-bold text-blue-800 mb-4'&gt;Image Information&lt;/h3&gt;
+                        &lt;div className='max-w-none'&gt;
+                            {result.split(&quot;\n&quot;).map((line, index) =&gt; {
+                                if (line.startsWith(&quot;Important Information:&quot;) || line.startsWith(&quot;Other Information:&quot;)) {
+                                    return (
+                                        &lt;h4 className='text-xl font-semibold mt-4 mb-2 text-blue-700' key={index}&gt;{line}&lt;/h4&gt;
+                                    )
+                                } else if (line.match(/^\d+\./) || line.startsWith(&quot;-&quot;)) {
+                                    return (
+                                        &lt;li key={index} className='ml-4 mb-2 text-gray-700'&gt;{line}&lt;/li&gt;
+                                    );
+                                } else if (line.trim() !== &quot;&quot;) {
+                                    return (
+                                        &lt;p key={index} className='mb-2 text-gray-800'&gt;{line}&lt;/p&gt;
+                                    );
+                                }
+                                return null;
+                            })}
+                        &lt;/div&gt;
+
+                        &lt;div className='mt-6'&gt;
+                            &lt;h4 className='text-lg font-semibold mb-2 text-blue-700'&gt;Related Keywords&lt;/h4&gt;
+                            &lt;div className='flex flex-wrap gap-2'&gt;
+                                {keywords.map((keyword, index) =&gt; (
+                                    &lt;button type='button' key={index} onClick={() =&gt; regenerateContent(keyword)} className='bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 trasnsition duration-150 ease-in-out'&gt;{keyword}&lt;/button&gt;
+                                ))}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        {relatedQuestion.length &gt; 0 &amp;&amp; (
+                            &lt;div className='mt-6'&gt;
+                                &lt;h4 className='text-lg font-semibold mb-2 text-blue-700'&gt;Related Questions&lt;/h4&gt;
+                                &lt;ul className='space-y-2'&gt;
+                                    {relatedQuestion.map((question, index) =&gt; (
+                                        &lt;button type='button' onClick={() =&gt; askRelatedQuestion(question)} className='text-left w-full bg-blue-200 text-blue-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-300 transition duration-150 ease-in-out'&gt;{question}&lt;/button&gt;
+                                    ))}
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        )}
+                    &lt;/div&gt;
+                )}
+            &lt;/div&gt;
+            &lt;section id=&quot;how-it-works&quot; className='mt-16'&gt;
+                &lt;h2 className='text-3xl font-extrabold text-gray-900 mb-8 text-center'&gt;
+                    How It Works
+                &lt;/h2&gt;
+                &lt;div className='grid grid-cols-1 md:grid-cols-3 gap-8'&gt;
+                    {[{ title: &quot;Upload Image&quot;, description: &quot;Start by uploading an image in any of the supported formats. Make sure the file size is within the limits.&quot; }, { title: &quot;AI Analysis&quot;, description: &quot;Our advanced AI will analyze the uploaded image and extract detailed information about its contents.&quot; }, { title: &quot;Get Results&quot;, description: &quot;Once the analysis is complete, you will receive the results with a breakdown of the image&#39;s contents.&quot; }].map((step, index) =&gt; (
+                        &lt;div key={index} className='bg-white rounded-lg shadow-md p-6 transition duration-150 ease-in-out hover:scale-105 cursor-pointer'&gt;
+                            &lt;div className='text-3xl font-semibold text-blue-600 mb-4'&gt;
+                                {index + 1}
+                            &lt;/div&gt;
+                            &lt;h3 className='text-xl font-semibold mb-2 text-gray-800'&gt;{step.title}&lt;/h3&gt;
+                            &lt;p className='text-gray-600'&gt;{step.description}&lt;/p&gt;
+                        &lt;/div&gt;
+                    ))}
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id=&quot;features&quot; className='mt-16'&gt;
+                &lt;h2 className='text-3xl font-extrabold text-gray-900 mb-8 text-center'&gt;
+                    Features
+                &lt;/h2&gt;
+                &lt;div className='grid grid-cols-1 md:grid-cols-2 gap-8'&gt;
+                    {[{ title: &quot;Accurate Identification&quot;, description: &quot;Our AI system provides precise and reliable image identification, ensuring you get accurate results every time.&quot; }, { title: &quot;Detailed Information&quot;, description: &quot;Receive in-depth analysis with detailed information about every aspect of your uploaded image.&quot; }, { title: &quot;Fast Results&quot;, description: &quot;Enjoy quick processing and get your image analysis results in a matter of seconds, saving you time.&quot; }, { title: &quot;User Friendly Interface&quot;, description: &quot;Navigate through our intuitive and user-friendly interface with ease, making the experience seamless.&quot; }].map((feature, index) =&gt; (
+                        &lt;div key={index} className='bg-white rounded-lg shadow-md p-6 transition duration-150 ease-in-out hover:scale-105 cursor-pointer'&gt;
+                            &lt;h3 className='text-xl font-semibold mb-2 text-blue-600'&gt;{feature.title}&lt;/h3&gt;
+                            &lt;p className='text-gray-600'&gt;{feature.description}&lt;/p&gt;
+                        &lt;/div&gt;
+                    ))}
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+    );
+};
+        </pre>
+    </div>
+</div>
+
+             
+            <h2>Footer</h2>
+            <p style="text-align: justify;">
+                This footer component, designed for the Image AI Analyzer project, offers a clean and responsive navigation experience. It features a structured layout with sections like "About Us," "Quick Links," "Our Projects," and "Follow Us." Each section is clearly labeled and provides essential information or links, enhancing user accessibility. Built using React and Next.js with Tailwind CSS for styling, this footer ensures smooth transitions and hover effects for interactive elements. Its responsive design guarantees optimal viewing across various devices and screen sizes.
+            </p>
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Footer.jsx:</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('code-content-footer', this)"></i>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content-footer">
+"use client";
+
+import Link from &#39;next/link&#39;
+import { FaWhatsapp, FaLinkedin, FaGithub, FaTelegram } from &#39;react-icons/fa&#39;; 
+import { IoMdMailOpen } from &#39;react-icons/io&#39; ;
+
+export const Footer = () =&gt; {
+  return (
+    &lt;footer className=&quot;bg-white shadow-sm mt-16&quot;&gt;
+      &lt;div className=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8&quot;&gt;
+        &lt;div className=&quot;grid grid-cols-1 md:grid-cols-4 gap-8&quot;&gt;
+          {/* About Section */}
+          &lt;div&gt;
+            &lt;h3 className=&quot;text-lg font-semibold text-blue-600 mb-4&quot;&gt;About Us&lt;/h3&gt;
+            &lt;p className=&quot;text-gray-600&quot;&gt;
+              Image Identifier uses advanced AI technology to provide accurate image analysis, giving detailed results in seconds.
+            &lt;/p&gt;
+          &lt;/div&gt;
+
+          {/* Quick Links Section */}
+          &lt;div&gt;
+            &lt;h3 className=&quot;text-lg font-semibold text-blue-600 mb-4&quot;&gt;Quick Links&lt;/h3&gt;
+            &lt;ul className=&quot;text-gray-600 space-y-2&quot;&gt;
+              &lt;li&gt;
+                &lt;Link href={&quot;#&quot;} className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  Home
+                &lt;/Link&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;Link href={&quot;#how-it-works&quot;} className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  How it Works
+                &lt;/Link&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;Link href={&quot;#features&quot;} className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  Features
+                &lt;/Link&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+
+          {/* Our Projects Section */}
+          &lt;div&gt;
+            &lt;h3 className=&quot;text-lg font-semibold text-blue-600 mb-4&quot;&gt;Our Projects&lt;/h3&gt;
+            &lt;ul className=&quot;text-gray-600 space-y-2&quot;&gt;
+              &lt;li&gt;
+                &lt;a href=&quot;https://nk-codepen-clone.web.app/&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  Online Coding Platform
+                &lt;/a&gt;
+              &lt;/li&gt;             
+              &lt;li&gt;
+                &lt;a href=&quot;https://nirmalkumarofllll.github.io/Portfolio/IDS.html&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  IDS
+                &lt;/a&gt;
+              &lt;/li&gt; 
+              &lt;li&gt;
+                &lt;a href=&quot;https://nirmalkumarofllll.github.io/Portfolio/CRS.html&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  CRS
+                &lt;/a&gt;
+              &lt;/li&gt; 
+              &lt;li&gt;
+                &lt;a href=&quot;https://nirmalkumarofllll.github.io/Portfolio/Chatbot.html&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                  Chatbot
+                &lt;/a&gt;
+              &lt;/li&gt; 
+            &lt;/ul&gt;
+          &lt;/div&gt;
+
+          {/* Social Media Section */}
+          &lt;div&gt;
+            &lt;h3 className=&quot;text-lg font-semibold text-blue-600 mb-4&quot;&gt;Follow Us&lt;/h3&gt;
+            &lt;div className=&quot;flex space-x-4&quot;&gt;
+              &lt;a href=&quot;https://mail.google.com/mail/u/0/?fs=1&amp;to=nirmalkumarofllll@gmail.com&amp;tf=cm&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                &lt;IoMdMailOpen size={24} /&gt;
+              &lt;/a&gt;              
+              &lt;a href=&quot;https://www.linkedin.com/in/nirmalkumarp-ofllll/&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                &lt;FaLinkedin size={24} /&gt;
+              &lt;/a&gt;
+              &lt;a href=&quot;https://github.com/Nirmalkumarofllll&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                &lt;FaGithub size={24} /&gt;
+              &lt;/a&gt;
+              &lt;a href=&quot;https://wa.me/8220694842&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                &lt;FaWhatsapp size={24} /&gt;
+              &lt;/a&gt;
+              &lt;a href=&quot;https://t.me/Nirmal_offl&quot; target=&apos;blank&apos; className=&quot;hover:text-blue-600 transition duration-150 ease-in-out&quot;&gt;
+                &lt;FaTelegram size={24} /&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div className=&quot;mt-8 border-t pt-6 text-center text-gray-500 text-sm&quot;&gt;
+          &copy; {new Date().getFullYear()} Nirmal Kumar. All rights reserved.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+  );
+};
+
+export default Footer;
+        </pre>
+    </div>
+</div>
+
+
+            
+            <h2>Download Project</h2>
+            <p style="text-align: justify; ">
+                You can download the complete project files here. This Image AI Analyzer project is connected with the Gemini API to enhance user experience with AI-driven image analysis. The project allows users to upload images, and in return, it generates relevant keywords and related questions based on the analysis of the image. When users click on these generated keywords or questions, the system dynamically creates detailed content associated with them. This intuitive AI integration helps users gain insights and information quickly and efficiently, making it an excellent tool for content creators, researchers, and developers.</p>
+            <a href="https://drive.google.com/drive/folders/17gvUKzfL65H8YHzDR5TQ_g7q_Y6CxEKs?usp=sharing" class="download-button" target="_blank" style="display: inline-flex; align-items: center; margin-top: 0px; margin-bottom: 2px;">
+            <i class="fas fa-download" style="margin-right: 5px;"></i> Download Project</a>
+            <p style="text-align: justify; margin-top: 10px; margin-bottom: 30px;">
+                NOTE: Replace with your Gemini API key before run the code. Hide your API key before posting it in the Github or in any other platforms.</p>
+            <ul class="actions">
+                <li><a href="https://github.com/Nirmalkumarofllll/Image-Analyzer" class="button" target="_blank">Github</a></li>
+                <li><a href="https://drive.google.com/file/d/1ezZDizk82myBUeZSvtWPUC8REPT5xC61/view?usp=sharing" class="button" target="_blank">Paper</a></li>
+            </ul>
+            
+            
+        </div>
+    </section>
+</div>
+
+<footer id="footer" class="wrapper alt">
+    <div class="inner" style="display: flex; justify-content: space-between; align-items: center;">
+        <ul class="menu">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li><p>NirmalKumar</p></li>
+        </ul>
+        <ul class="icons" style="display: flex; gap: 10px;">
+            <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nirmalkumarofllll@gmail.com" target="blank" class="fa-solid fa-envelope"><span class="label">Gmail</span></a></li>
+            <li><a href="https://github.com/Nirmalkumarofllll" target="blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nirmalkumarp-ofllll/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://wa.me/8220694842" target="_blank" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+            <li><a href="https://t.me/Nirmal_offl" target="_blank" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+    function copyToClipboard(elementId, iconElement) {
+        var copyText = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(copyText).then(function() {
+            iconElement.style.color = '#555555'; 
+            setTimeout(function() {
+                iconElement.style.color = ''; 
+            }, 2000);
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
