@@ -196,7 +196,7 @@ let currentPhrase = "";
 let letterIndex = 0;
 
 function type() {
-    const article = phrases[index] === "ETHICAL HACKER" ? "an" : "a";
+    const article = phrases[index] === "ETHICAL HACKER" ? "AN" : "A";
     document.getElementById("constant-article").textContent = ` ${article} `;
     if (letterIndex < phrases[index].length) {
         currentPhrase += phrases[index][letterIndex];

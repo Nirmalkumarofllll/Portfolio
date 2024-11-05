@@ -238,20 +238,32 @@ input, select, textarea {
 	
 	.constant {
 		color: #ffffff8c;
+		font-family: math;
 	}
 	
 	.hyphen {
 		color: #b74e91 !important;
+		font-family: math;
+
 	}
 	
 	.dynamic {
 		color: #b74e91; 
 		display: inline-block;
+		font-family: math;
 	}
 
 	@media (max-width: 600px) {
 		.dynamic {
-			display: block; 
+			display: none; 
+		}
+		.constant{
+			display: none;
+		}
+		.mobile-hero-p{
+			display: block !important;
+			font-size: xx-large;
+			font-family: math;
 		}
 	}
 
@@ -3273,7 +3285,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.wrapper > .inner {
-					padding: 3em 2em 1em 2em ;
+					padding: 0.5em ;
 				}
 
 			}
@@ -4391,4 +4403,32 @@ body.is-ie #sidebars > .inners {
 	width: 100%;
 	border-radius: 0.25rem;
 	border: none;
+}
+
+.image.fit {
+	width: 100%;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.fullscreen-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.9);
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.fullscreen-overlay img {
+	max-width: 90%;
+	max-height: 90%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.no-scroll {
+	overflow: hidden;
 }

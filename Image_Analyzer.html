@@ -67,6 +67,8 @@
                 This project exemplifies the potential of AI in bridging visual media with textual information, ultimately enhancing learning and engagement across various domains.
                 With continuous updates and improvements planned for the future, the Image Analyzer aims to become a leading tool in AI-driven content generation and image analysis, catering to a diverse audience from students to professionals seeking to enrich their knowledge base.            
             </p>
+            <span class="image fit"><img src="images/image_analyzer.png" alt="" /></span>
+
             
             <h2>Install packages</h2>
             <p style="text-align: justify;">
@@ -569,7 +571,9 @@ export default Footer;
                 <li><a href="https://github.com/Nirmalkumarofllll/Image-Analyzer" class="button" target="_blank">Github</a></li>
                 <li><a href="https://drive.google.com/file/d/1ezZDizk82myBUeZSvtWPUC8REPT5xC61/view?usp=sharing" class="button" target="_blank">Paper</a></li>
             </ul>
-            
+            <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+                <img id="fullscreenImage" src="" alt="Fullscreen View">
+            </div>
             
         </div>
     </section>
@@ -611,6 +615,25 @@ export default Footer;
             console.error('Could not copy text: ', err);
         });
     }
+    function openFullscreen(imgSrc) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImg = document.getElementById('fullscreenImage');
+
+            fullscreenImg.src = imgSrc;
+            overlay.style.display = 'flex';          
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+        document.querySelectorAll('.image.fit img').forEach(img => {
+            img.addEventListener('click', function() {
+                openFullscreen(this.src);
+            });
+        });
 </script>
 
 </body>

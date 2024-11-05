@@ -273,7 +273,9 @@ if __name__ == "__main__":
                 <li><a href="https://drive.google.com/file/d/17nM85WvYYukx1_D-fp7JznEc68sa384j/view?usp=sharing" class="button" target="_blank">Paper</a></li>
             </ul>
             
-            
+            <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+                <img id="fullscreenImage" src="" alt="Fullscreen View">
+            </div>
         </div>
     </section>
 </div>
@@ -314,6 +316,25 @@ if __name__ == "__main__":
             console.error('Could not copy text: ', err);
         });
     }
+    function openFullscreen(imgSrc) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImg = document.getElementById('fullscreenImage');
+
+            fullscreenImg.src = imgSrc;
+            overlay.style.display = 'flex';          
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+        document.querySelectorAll('.image.fit img').forEach(img => {
+            img.addEventListener('click', function() {
+                openFullscreen(this.src);
+            });
+        });
 </script>
 
 </body>

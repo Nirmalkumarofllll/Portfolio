@@ -32,7 +32,6 @@
             <div class="inners">
                 <nav>
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
                         <li><a href="./Foodapp.html" class="active">Food App</a></li>
                         <li><a href="./Codepen.html">Codepen</a></li>
                         <li><a href="./IDS.html">IDS</a></li>
@@ -53,9 +52,9 @@
     <!-- Main -->
     <section id="main" class="wrapper">
         <div class="inner">
-            <h1 class="major">Full-stack Food App</h1>
+            <h1 class="major">Full stack Food App</h1>
             <p style="text-align: justify;">
-                The Full-Stack Food App is a dynamic and user-friendly application developed using React for the frontend, Tailwind CSS for sleek and responsive design, and Node.js for the backend. It leverages Firebase for cloud storage and user authentication, ensuring secure and reliable data management. Additionally, the app integrates EmailJS for email notifications and Razorpay for seamless payment processing, offering users a smooth and comprehensive experience.
+                The Full Stack Food App is a dynamic and user-friendly application developed using React for the frontend, Tailwind CSS for sleek and responsive design, and Node.js for the backend. It leverages Firebase for cloud storage and user authentication, ensuring secure and reliable data management. Additionally, the app integrates EmailJS for email notifications and Razorpay for seamless payment processing, offering users a smooth and comprehensive experience.
 
                 The app features a highly interactive Home Page, providing users with an intuitive interface to explore various food items. Users can browse the "Our Services" section to understand the offerings of the platform and can easily reach out through the "Contact Us" page. A dedicated cart functionality enables users to add and manage their food selections, making the purchasing process simple and efficient.
                 
@@ -63,7 +62,6 @@
                 
                 By combining modern technologies such as Firebase for cloud services and authentication, Razorpay for payment gateways, and EmailJS for email services, the app ensures a seamless and efficient user experience while providing admins with powerful tools to maintain and enhance the platform's offerings. This project showcases the integration of modern web technologies and cloud services to build a scalable, efficient, and user-friendly food ordering system.
             </p>
-           <!-- <span class="image fit"><video src="./images/Food.mp4" class="Foodvedio" controls></video></span>-->
 
             </video>
             <h2>Download Project</h2>
@@ -256,7 +254,6 @@
                 
                 This component effectively integrates API calls, Redux state management, and a responsive user interface to provide users with a comprehensive overview of their order history. The clean separation of concerns and the use of modern React features enhance both maintainability and user experience. The strategic implementation of hooks and Redux fosters a responsive application that updates in real-time as the user interacts with their orders.
             </p>
-            <span class="image fit"><img src="images/Food_App_Order.png" alt="" /></span>
             <span class="image fit"><img src="images/Food_App_Orders.png" alt="" /></span>
 
 
@@ -344,10 +341,12 @@
 
             <ul class="actions">
                 <li><a href="https://github.com/Nirmalkumarofllll/Food-App" class="button" target="_blank">Github</a></li>
-                <li><a href="https://drive.google.com/file/d/1JdK5Nv-AsUO2TYWwToq1CpcPYvZbNfqd/view?usp=sharing" class="button" target="_blank">Paper</a></li>
+                <li><a href="https://drive.google.com/file/d/1JdK5Nv-AsUO2TYWwToq1CpcPYvZbNfqd/view" class="button" target="_blank">Paper</a></li>
             </ul>
             
-            
+            <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+                <img id="fullscreenImage" src="" alt="Fullscreen View">
+            </div>
         </div>
     </section>
 </div>
@@ -388,6 +387,33 @@
             console.error('Could not copy text: ', err);
         });
     }
+    function openFullscreen(imgSrc) {
+            const overlay = document.getElementById('fullscreenOverlay');
+            const fullscreenImg = document.getElementById('fullscreenImage');
+
+            fullscreenImg.src = imgSrc;
+            overlay.style.display = 'flex';
+
+            // Disable body scrolling
+            document.body.classList.add('no-scroll');
+        }
+
+        // Function to close fullscreen view
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.style.display = 'none';
+
+            // Enable body scrolling
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Add click event to all images with the 'image fit' class
+        document.querySelectorAll('.image.fit img').forEach(img => {
+            img.addEventListener('click', function() {
+                openFullscreen(this.src);
+            });
+        });
+
 </script>
 
 </body>
