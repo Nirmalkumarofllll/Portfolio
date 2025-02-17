@@ -4432,15 +4432,3 @@ body.is-ie #sidebars > .inners {
 .no-scroll {
 	overflow: hidden;
 }
-#footer{
-	height: 0px;
-	padding: 0px;
-}
-#footer .inner{
-	height: 0px;
-	padding: 0px;
-}
-#footer .inner .menu{
-	padding: 5em;
-	background-color: #493382;
-}
