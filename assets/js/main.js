@@ -190,7 +190,8 @@ window.onload = function() {
 
 })(jQuery);
 
-const phrases = ["FRONT-END DEVELOPER", "SOFTWARE ENGINEER", "ETHICAL HACKER", "FULL STACK DEVELOPER"];
+//const phrases = ["FRONT-END DEVELOPER", "SOFTWARE ENGINEER", "ETHICAL HACKER", "FULL STACK DEVELOPER"];
+const phrases = ["SOFTWARE ENGINEER"];
 let index = 0;
 let currentPhrase = "";
 let letterIndex = 0;
