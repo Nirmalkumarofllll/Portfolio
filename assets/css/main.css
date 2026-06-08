@@ -4432,3 +4432,17 @@ body.is-ie #sidebars > .inners {
 .no-scroll {
 	overflow: hidden;
 }
+
+/* Remove dotted focus border from logo */
+#header .title,
+#header .title:focus,
+#header .title:active,
+
+
+/* Remove image focus border */
+#header .title img {
+    border: 0;
+    outline: none;
+
+}
+
